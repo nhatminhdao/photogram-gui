@@ -1,8 +1,8 @@
 <h1>List of users</h1>
 
 <form action="/add_user" method="post">
-  <label for="browser_username">Username</label>
-  <input id="browser_username" type="text" name="input_username" placeholder="Enter a username...">
+  <label for="username">Username</label>
+  <input id="username" type="text" name="input_username" placeholder="Enter a username...">
 
   <button>Add user</button>
 </form>
@@ -15,20 +15,20 @@
 
     <th>Username</th>
 
-    <td></td>
+    <th></th>
   </tr>
 
-
+    <% User.all.order({ :username => :asc }).each do |a_user| %>
     <tr>
-      <% User.all.each do |a_user| %>
-        <td><%= a_user.id %></td>
+      <td><%= a_user.id %></td>
 
-        <td><%= a_user.username %></td>
+      <td><%= a_user.username %></td>
 
-        <td>
-          <a href="/users/<td><%= a_user.username %></td>">
-            Show details
-          </a>
-        </td>
-      <% end %>
+      <td>
+        <a href="/users/<%= a_user.username %>">
+          Show details
+        </a>
+      </td>
     </tr>
+    <% end %>  
+</table>
