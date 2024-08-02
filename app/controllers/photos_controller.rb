@@ -34,21 +34,23 @@ class PhotosController < ApplicationController
     
     new_photo.save
 
-    redirect_to("/photos")
+    redirect_to("/photos/#{new_photo.id}")
   end
 
-  # def update
-  #   the_id = params.fetch("path_id")
+  def update
+    the_id = params.fetch("path_id")
 
-  #   matching_records = Photo.where({ :id => the_id })
+    matching_records = Photo.where({ :id => the_id })
 
-  #   the_photo = matching_records.first
+    the_photo = matching_records.first
     
-  #   the_photo.image = params.fetch("input_image")
-  #   the_photo.caption = params.fetch("input_caption")
+    the_photo.image = params.fetch("input_image")
+    the_photo.caption = params.fetch("input_caption")
 
-  #   redirect_to("/photos/#[the_id]")
-  # end
+    the_photo.save
+
+    redirect_to("/photos/#{the_id}")
+  end
 
   def comment
     new_comment = Comment.new
