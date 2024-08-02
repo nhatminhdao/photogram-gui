@@ -22,9 +22,9 @@
       <input id="a" type="text" name="input_image" value="<%= @the_photo.image %>" placeholder="Enter a URL for the image...">
 
       <label for="b">Caption</label>
-      <input id="b" type="text" name="input_caption" value="<%= @the_photo.caption %>" placeholder="Enter a caption for the photo...">
+      <textarea id="b" type="text" name="input_caption" value="<%= @the_photo.caption %>" placeholder="Enter a caption for the photo..."></textarea>
 
-      <button>Update photo</button>
+      <button type="submit">Update photo</button>
     </form>
 
     <dt>Delete photo</dt>
@@ -55,14 +55,14 @@
 <h3>Add a new comment</h3>
 
 <form action="/add_comment" method="post">
-  <label for="a">Photo ID</label>
-  <input id="a" type=text placeholder="Enter the photo ID" name="input_photo_id" value="<%= @the_photo.id %>">
+  <label for="c">Photo ID</label>
+  <input id="c" type=text placeholder="Enter the photo ID" name="input_photo_id" value="<%= @the_photo.id %>">
 
-  <label for="b">Author ID</label>
-  <input id="b" type=text placeholder="Enter your author ID" name="input_author_id">
+  <label for="d">Author ID</label>
+  <input id="d" type=text placeholder="Enter your author ID" name="input_author_id">
 
-  <label for="c">Comment</label>
-  <input id="c" type=text placeholder="Enter a comment" name="input_comment">
+  <label for="e">Comment</label>
+  <textarea id="e" type=text placeholder="Enter a comment" name="input_comment"></textarea>
 
-  <button>Add comment</button>
+  <button type="submit">Add comment</button>
 </form>
